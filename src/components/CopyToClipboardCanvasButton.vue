@@ -7,6 +7,12 @@
         v-if="isNotificationActive"
         class="notification absolute px-3 py-1 left-1/2 transform -translate-x-1/2 text-center rounded bg-white whitespace-nowrap border border-border"
       >
+        <span
+          class="notification__before absolute left-1/2 bottom-full h-0 w-0 transform -translate-x-1/2 border-solid border-transparent border-8"
+        ></span>
+        <span
+          class="notification__after absolute left-1/2 h-0 w-0 transform -translate-x-1/2 border-solid border-transparent border-8"
+        ></span>
         {{ notificationText }}
       </div>
     </transition>
@@ -60,8 +66,8 @@ export default {
       this.notificationText = text;
 
       setTimeout(() => {
-        this.isNotificationActive = false;
-        this.notificationText = '';
+        // this.isNotificationActive = false;
+        // this.notificationText = '';
       }, 1000);
     },
   },
@@ -81,26 +87,13 @@ export default {
 .notification {
   top: calc(100% + 0.625rem);
 
-  &::after,
-  &::before {
-    position: absolute;
-    left: 50%;
-    height: 0;
-    width: 0;
-    margin-left: -0.625rem;
-    border: solid transparent;
-    border-width: 0.625rem;
-    content: '';
+  &__before {
+    border-bottom-color: #ced4da !important;
   }
 
-  &::before {
-    bottom: 100%;
-    border-bottom-color: #ced4da;
-  }
-
-  &::after {
+  &__after {
     bottom: calc(100% - 0.125rem);
-    border-bottom-color: white;
+    border-bottom-color: white !important;
   }
 }
 </style>
