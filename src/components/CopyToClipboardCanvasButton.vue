@@ -66,8 +66,8 @@ export default {
       this.notificationText = text;
 
       setTimeout(() => {
-        // this.isNotificationActive = false;
-        // this.notificationText = '';
+        this.isNotificationActive = false;
+        this.notificationText = '';
       }, 1000);
     },
   },
