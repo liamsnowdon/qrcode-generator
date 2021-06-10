@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex justify-center items-center h-full text-center relative border border-border overflow-hidden"
+    class="flex justify-center items-center flex-grow text-center relative border border-border rounded overflow-hidden"
   >
     <canvas v-show="qrValue" ref="canvas" class="mx-auto"></canvas>
 
@@ -25,7 +25,7 @@ import CanvasButton from '@/components/CanvasButton.vue';
 import CopyToClipboardCanvasButton from '@/components/CopyToClipboardCanvasButton.vue';
 
 export default {
-  name: 'QRCode',
+  name: 'Canvas',
 
   components: {
     CanvasButton,

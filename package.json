@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "normalize.css": "^8.0.1",
     "qrcode": "^1.4.4",
     "vue": "^2.6.11",
     "vuex": "^3.4.0"
