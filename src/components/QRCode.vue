@@ -1,31 +1,46 @@
 <template>
-  <div class="text-center">
+  <div
+    class="flex justify-center items-center h-full text-center relative border border-border overflow-hidden"
+  >
     <canvas v-show="qrValue" ref="canvas" class="mx-auto"></canvas>
 
     <p v-show="!qrValue">Set a value</p>
 
-    <Button v-show="qrValue" text="Download" @click="downloadImage" />
-    <Button v-show="qrValue" text="Copy Data URL" @click="copyDataUrl" />
+    <div class="absolute top-0 left-0 right-0 p-3 flex justify-end bg-white">
+      <CanvasButton v-show="qrValue" text="Download" @click="downloadImage" />
+
+      <CopyToClipboardCanvasButton
+        v-show="qrValue"
+        class="ml-5"
+        text="Copy Data URL"
+        :value="dataUrl"
+      />
+    </div>
   </div>
 </template>
 
 <script>
 import QRCode from 'qrcode';
-import Button from '@/components/Button.vue';
+import CanvasButton from '@/components/CanvasButton.vue';
+import CopyToClipboardCanvasButton from '@/components/CopyToClipboardCanvasButton.vue';
 
 export default {
   name: 'QRCode',
 
   components: {
-    Button,
+    CanvasButton,
+    CopyToClipboardCanvasButton,
   },
 
   data() {
-    return {};
+    return {
+      dataUrl: '',
+    };
   },
 
   mounted() {
     this.generateQRCode(this.qrValue);
+    this.setDataUrl();
   },
 
   computed: {
@@ -53,6 +68,7 @@ export default {
   watch: {
     propertiesToWatchForQRUpdate() {
       this.generateQRCode();
+      this.setDataUrl();
     },
   },
 
@@ -75,6 +91,10 @@ export default {
       );
     },
 
+    setDataUrl() {
+      this.dataUrl = this.$refs.canvas.toDataURL();
+    },
+
     downloadImage() {
       const MIME_TYPE = `image/${this.fileType}`;
       const url = this.$refs.canvas.toDataURL(MIME_TYPE);
@@ -85,22 +105,6 @@ export default {
       dlLink.dataset.downloadurl = `${MIME_TYPE}:${dlLink.download}:${dlLink.href}`;
 
       dlLink.click();
-    },
-
-    copyDataUrl(event) {
-      event.preventDefault();
-
-      const MIME_TYPE = `image/${this.fileType}`;
-      const data = this.$refs.canvas.toDataURL(MIME_TYPE);
-
-      navigator.clipboard.writeText(data).then(
-        () => {
-          alert('Copied to clipboard!');
-        },
-        () => {
-          alert('Error copying to clipboard :(');
-        },
-      );
     },
   },
 };

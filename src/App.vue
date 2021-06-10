@@ -2,13 +2,17 @@
   <div id="app">
     <Header />
 
-    <div class="flex flex-wrap px-16 py-10 max-w-7xl my-0 mx-auto">
-      <div class="flex-1 flex justify-center items-center">
-        <QRCode />
-      </div>
+    <div class="px-16 py-10">
+      <div class="max-w-7xl my-0 mx-auto">
+        <div class="flex flex-wrap -mx-10">
+          <div class="flex-1 px-10">
+            <QRCode />
+          </div>
 
-      <div class="flex-1">
-        <Settings />
+          <div class="flex-1 px-10">
+            <Settings />
+          </div>
+        </div>
       </div>
     </div>
   </div>

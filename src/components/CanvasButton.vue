@@ -1,7 +1,7 @@
 <template>
   <button
-    class="bg-primary rounded mt-5 px-4 py-2 font-bold hover:bg-primary-dark transition-colors duration-300;"
-    :type="type"
+    class="text-primary font-bold hover:underline"
+    type="button"
     @click="onClick"
   >
     {{ text }}
@@ -10,18 +10,12 @@
 
 <script>
 export default {
-  name: 'Button',
+  name: 'CanvasButton',
 
   props: {
     text: {
       type: String,
       required: true,
-    },
-
-    type: {
-      type: String,
-      required: false,
-      default: 'button',
     },
   },
 
