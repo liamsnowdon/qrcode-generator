@@ -1,11 +1,14 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
+// You know the rules.
+import { DEFAULT_VALUE } from '@/constants/';
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    qrValue: 'https://www.youtube.com/watch?v=oHg5SJYRHA0',
+    qrValue: DEFAULT_VALUE,
     qrLightColor: '#ffffff',
     qrDarkColor: '#000000',
     fileType: 'png',

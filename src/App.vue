@@ -2,10 +2,10 @@
   <div id="app">
     <Header />
 
-    <div class="px-16 py-10">
+    <div class="px-5 py-5 md:px-16 md:py-10">
       <div class="max-w-7xl my-0 mx-auto">
-        <div class="flex flex-wrap -mx-10">
-          <div class="flex flex-col flex-1 px-10">
+        <div class="md:flex md:-mx-10">
+          <div class="flex flex-col md:flex-1 md:px-10 mb-10 md:mb-0">
             <Canvas />
 
             <div
@@ -13,7 +13,7 @@
             >
               <div
                 aria-hidden="true"
-                class="h-8 w-8 mr-3 flex items-center justify-center text-2xl font-bold rounded-full bg-primary"
+                class="h-8 w-8 mr-3 flex flex-shrink-0 items-center justify-center text-2xl font-bold rounded-full bg-primary"
               >
                 !
               </div>
@@ -21,7 +21,7 @@
             </div>
           </div>
 
-          <div class="flex-1 px-10">
+          <div class="md:flex-1 md:px-10">
             <Settings />
           </div>
         </div>

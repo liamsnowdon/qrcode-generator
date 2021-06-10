@@ -1,10 +1,11 @@
 <template>
   <div>
     <h3 class="mb-3 text-2xl">Download File Type</h3>
-    <p class="mb-5">
+
+    <div class="border-l-8 border-border p-3 my-5">
       <span class="font-bold">Note:</span> If the browser doesn't support the
       selected file type, it will be downloaded as a PNG.
-    </p>
+    </div>
 
     <div class="flex">
       <label

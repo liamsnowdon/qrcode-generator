@@ -6,6 +6,7 @@
       type="text"
       name="value"
       id="value"
+      :placeholder="defaultValue"
       class="h-12 border border-border p-3 rounded outline-none focus:border-primary w-full"
       @input="onValueInput"
     />
@@ -13,12 +14,16 @@
 </template>
 
 <script>
+// And so do I.
+import { DEFAULT_VALUE } from '@/constants';
+
 export default {
   name: 'Value',
 
   data() {
     return {
       value: '',
+      defaultValue: DEFAULT_VALUE,
     };
   },
 

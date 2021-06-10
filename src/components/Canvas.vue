@@ -1,20 +1,24 @@
 <template>
-  <div
-    class="flex justify-center items-center flex-grow text-center relative border border-border rounded overflow-hidden"
-  >
-    <canvas v-show="qrValue" ref="canvas" class="mx-auto"></canvas>
-
-    <p v-show="!qrValue">Set a value</p>
-
-    <div class="absolute top-0 left-0 right-0 p-3 flex justify-end bg-white">
-      <CanvasButton v-show="qrValue" text="Download" @click="downloadImage" />
+  <div class="border border-border rounded flex-grow flex flex-col">
+    <div
+      v-show="qrValue"
+      class="p-3 flex justify-end bg-white border-b border-border"
+    >
+      <CanvasButton text="Download" @click="downloadImage" />
 
       <CopyToClipboardCanvasButton
-        v-show="qrValue"
         class="ml-5"
         text="Copy Data URL"
         :value="dataUrl"
       />
+    </div>
+
+    <div
+      class="flex justify-center items-center flex-grow text-center relative overflow-hidden p-5 md:p-0"
+    >
+      <canvas v-show="qrValue" ref="canvas" class="mx-auto"></canvas>
+
+      <p v-show="!qrValue">Set a value</p>
     </div>
   </div>
 </template>
