@@ -4,21 +4,21 @@
 
     <p v-show="!qrValue">Set a value</p>
 
-    <button class="button" v-show="qrValue" @click="downloadImage">
-      Download
-    </button>
-
-    <button class="button" v-show="qrValue" @click="copyDataUrl">
-      Copy Data URL
-    </button>
+    <Button v-show="qrValue" text="Download" @click="downloadImage" />
+    <Button v-show="qrValue" text="Copy Data URL" @click="copyDataUrl" />
   </div>
 </template>
 
 <script>
 import QRCode from 'qrcode';
+import Button from '@/components/Button.vue';
 
 export default {
   name: 'QRCode',
+
+  components: {
+    Button,
+  },
 
   data() {
     return {};
@@ -105,9 +105,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-.button {
-  @apply bg-primary rounded mt-5 px-4 py-2 font-bold hover:bg-primary-dark transition-colors duration-300;
-}
-</style>
