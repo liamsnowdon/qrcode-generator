@@ -7,6 +7,9 @@ module.exports = {
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
+    fontFamily: {
+      display: 'Source Sans Pro, Arial, sans-serif',
+    },
     colors: {
       transparent: 'transparent',
       white: '#fff',

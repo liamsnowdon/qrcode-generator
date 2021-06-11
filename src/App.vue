@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="font-display">
     <Header />
 
     <div class="px-5 py-5 md:px-16 md:py-10">
