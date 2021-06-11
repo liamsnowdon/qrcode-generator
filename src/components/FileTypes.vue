@@ -2,10 +2,10 @@
   <div>
     <h3 class="mb-3 text-2xl">Download File Type</h3>
 
-    <div class="border-l-8 border-border p-3 my-5">
+    <SettingsWarning>
       <span class="font-bold">Note:</span> If the browser doesn't support the
       selected file type, it will be downloaded as a PNG.
-    </div>
+    </SettingsWarning>
 
     <div class="flex">
       <label
@@ -30,8 +30,14 @@
 </template>
 
 <script>
+import SettingsWarning from '@/components/SettingsWarning.vue';
+
 export default {
   name: 'FileTypes',
+
+  components: {
+    SettingsWarning,
+  },
 
   data() {
     return {

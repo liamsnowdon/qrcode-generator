@@ -2,10 +2,10 @@
   <div>
     <h3 class="text-2xl">Colours</h3>
 
-    <div class="border-l-8 border-border p-3 my-5">
+    <SettingsWarning>
       <span class="font-bold">Tip:</span> be careful when changing the colour of
       the QR code as it may make it unreadable.
-    </div>
+    </SettingsWarning>
 
     <div class="flex">
       <ColorPicker
@@ -24,12 +24,14 @@
 
 <script>
 import ColorPicker from '@/components/ColorPicker.vue';
+import SettingsWarning from '@/components/SettingsWarning.vue';
 
 export default {
   name: 'Colors',
 
   components: {
     ColorPicker,
+    SettingsWarning,
   },
 
   methods: {

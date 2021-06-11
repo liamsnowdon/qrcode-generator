@@ -43,7 +43,7 @@ export default {
   },
 
   mounted() {
-    this.generateQRCode(this.qrValue);
+    this.generateQRCode();
     this.setDataUrl();
   },
 
